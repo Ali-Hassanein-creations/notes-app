@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notes</title>
+<title>Checklist</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>Notes</h1>
+  <header>
+    <h1>Checklist</h1>
+    <div class="progress"><div id="progress-bar"></div></div>
+    <p id="progress-text"></p>
+  </header>
 
   <form id="note-form">
-    <input type="text" id="note-input" placeholder="Write a note..." autocomplete="off" />
-    <button type="submit">Add</button>
+    <input type="text" id="note-input" placeholder="Add a task..." autocomplete="off" />
+    <div class="options">
+      <label class="urgency-pick">Urgency
+        <input type="range" id="urgency-input" min="1" max="5" value="3" />
+        <span id="urgency-value" class="badge u3">3</span>
+      </label>
+      <label class="daily-pick"><input type="checkbox" id="daily-input" /> Resets daily</label>
+      <button type="submit">Add</button>
+    </div>
   </form>
 
   <ul id="notes-list"></ul>
